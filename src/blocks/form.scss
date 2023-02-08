@@ -1,0 +1,68 @@
+.form {
+    display: flex;
+    flex-direction: column;
+
+    &__input {
+        background-color: unset;
+        font-family: inherit;
+        letter-spacing: 1px;
+        color: inherit;
+        padding: 1rem 1rem 1.4rem;
+        border-radius: 2px;
+        border: none;
+        width: 70%;
+        display: block;
+        transition: all .3s;
+
+        &:focus {
+            outline: none;
+        }
+
+        // &:focus:invalid {
+        //     border-bottom: 3px solid red;
+        // }
+
+        &::-webkit-input-placeholder {
+            color: grey;
+        }
+
+        &--dashed {
+            background-image: linear-gradient(to right, black 50%, rgba(255,255,255,0) 0%);
+            background-position: bottom;
+            background-size: 10px 1px;
+            background-repeat: repeat-x;
+        }
+    }
+
+
+    &__label {
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin-left: 2rem;
+        margin-top: .7rem;
+        display: block;
+        transition: all .3s;
+        color: grey;
+    }
+
+    &__input:placeholder-shown + &__label {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4rem);
+    }
+
+    &__button {
+        font-family: "Iceland";
+        letter-spacing: 1px;
+        padding: 10px;
+        box-shadow: 6px 4px;
+        width: 10rem;
+        background-color: unset;
+            border: 2px solid;
+
+        &--disabled {
+            color: grey;
+            border: 2px solid grey;
+        }
+    }
+}

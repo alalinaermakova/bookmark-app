@@ -1,0 +1,40 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+// instead of 10px, that cannot be changed by user in their browser
+// we do 10/16 * 100% = 62.5%
+// when user changes font size in browser, it changes everything on page
+// if we want 24px font-size of element, we divide it by 10 and we get 2.4rem
+
+body {
+    font-family: "Iceland", sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    letter-spacing: 2px;
+    padding: 3rem;
+    
+    box-sizing: border-box;
+}
+
+.app {
+    z-index: 1;
+}
+
+
+@import './blocks/bookmark.scss';
+@import './blocks/bookmark-list.scss';
+@import './blocks/bookmark-form.scss';
+@import './blocks/form.scss';
+@import './blocks/profile.scss';
+@import './blocks/popup.scss';
+@import './blocks/pagination.scss';
+@import './blocks/animation.scss';

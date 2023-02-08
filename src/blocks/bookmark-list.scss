@@ -1,0 +1,45 @@
+.bookmark-list {
+    text-align: center;
+
+    &__button {
+        font-family: "Iceland";
+        letter-spacing: 1px;
+        background-color: unset;
+        border: 2px solid;
+        padding: 10px;
+        box-shadow: 6px 4px;
+    }
+
+    &__toggle-btn {
+        border: none;
+        background-color: unset;
+        margin-left: 3rem;
+        
+    }
+
+    &__toggle-img {
+        width: 3rem;
+        object-fit: cover;
+    }
+    &__button-box {
+        display: inline-flex;
+        margin: 2rem 0 2rem;
+    }
+
+    &__grid {
+        width: 95%;
+        margin: 1rem auto;
+        display: grid;
+        //grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 1rem;
+        column-gap: 1rem;
+    }
+
+    &__rows {
+        width: 30%;
+        margin: 1rem auto;
+        display: flex;
+        flex-direction: column;
+    }
+}

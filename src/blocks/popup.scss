@@ -1,0 +1,95 @@
+.popup {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .5s, visibility .5s;
+
+    &--opened {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity .5s, visibility 0s;
+    }
+
+    &__title {
+        font-size: 2.3rem;
+    }
+
+    &__content {
+        background-image: url(./images/Planet.svg);
+        width: 430px;
+        position: relative;
+        box-sizing: border-box;
+        padding: 34px 36px 37px;
+        background-color: #ffffff;
+        border-radius: 10px;
+    }
+
+    &__button {
+        font-family: "Iceland";
+        letter-spacing: 1px;
+        background-color: unset;
+        border: 2px solid;
+        padding: 10px;
+        box-shadow: 6px 4px;
+        padding: 1rem 2rem;
+        margin-top: 3rem;
+
+        &--disabled {
+            color: grey;
+            border: 2px solid grey;
+        }
+    }
+
+    &__button--close {
+        background-image: url(./images/close-button.svg);
+        position: absolute;
+        background-position: center;
+        background-size: contain;
+        top: -40px;
+        right: -40px;
+        transition: opacity 0,5s linear;
+        cursor: pointer;
+        height: 5rem;
+        width: 5rem;
+        background-color: unset;
+        border: none;
+    }
+
+    &__input {
+        background-color: unset;
+        font-family: inherit;
+        font-size: 2rem;
+        letter-spacing: 1px;
+        color: inherit;
+        padding: 2rem 1rem 2rem;
+        border-radius: 2px;
+        border: none;
+        width: 100%;
+        display: block;
+        transition: all .3s;
+
+        &:focus {
+            outline: none;
+        }
+
+        &--dashed {
+            background-image: linear-gradient(to right, black 50%, rgba(255,255,255,0) 0%);
+            background-position: bottom;
+            background-size: 10px 1px;
+            background-repeat: repeat-x;
+        }
+    }
+
+    &__error-text {
+        font-size: 2.5rem;
+    }
+}

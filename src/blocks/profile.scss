@@ -1,0 +1,18 @@
+.profile {
+    margin-left: 3rem;
+    display: flex;
+    align-items: center;
+
+    &__name {
+        font-size: 1.6rem;
+        margin-left: 1rem;
+    }
+
+    &__img {
+        width: 4rem;
+        box-shadow: 0 5px 15px 0px rgba(0,0,0,0.1);
+	    transform: translatey(0px);
+        animation: float 6s ease-in-out infinite;
+        border-radius: 50%;
+    }
+}
