@@ -56,3 +56,15 @@
         flex-direction: column;
     }
 }
+
+@media (max-width: 45rem) {
+    .bookmark-list {
+        &__rows {
+            width: 90%;
+        }
+
+        &__grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}

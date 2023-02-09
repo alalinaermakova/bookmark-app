@@ -10,6 +10,7 @@
     cursor: pointer;
    
     &__link {
+        color: $color-primary;
 
         &--active {
             border: 1px solid;

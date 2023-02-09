@@ -17,7 +17,7 @@ const Bookmark = ({ bookmark, id, title, link, deleteBookmark, onBookmarkEdit })
             <div className="bookmark" key={id}>
                 <div className="bookmark__box">
                     <img className="bookmark__img" src={linkImg} />
-                    <p><a className="bookmark__title" href={link}>{title}</a></p>
+                    <p><a className="bookmark__title" href={link}>{title == '' ? link : title}</a></p>
                 </div>
                 <div className="bookmark__button-box">
                     <button

@@ -36,7 +36,9 @@ const BookmarkForm = ({ addBookmark, bookmarkTitle, setBookmarkTitle, bookmarkLi
                             className="form__input form__input--dashed"
                             onChange={e => setBookmarkLink(e.target.value)}
                             value={bookmarkLink}/>
-                        <label htmlFor="form-link" className="form__label">
+                        <label
+                            htmlFor="form-link"
+                            className={`form__label ${showError ? "form__label--invalid" : ''}`}>
                             https://www.example.com
                         </label>
                         <button

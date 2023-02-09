@@ -16,10 +16,11 @@
 
         &:focus {
             outline: none;
+            background-color: unset;
         }
 
         &::-webkit-input-placeholder {
-            color: grey;
+            color: $color-secondary;
         }
 
         &--dashed {
@@ -30,7 +31,6 @@
         }
     }
 
-
     &__label {
         font-size: 1.2rem;
         font-weight: 400;
@@ -38,7 +38,13 @@
         margin-top: .7rem;
         display: block;
         transition: all .3s;
-        color: grey;
+        color: $color-secondary;
+
+        &--invalid,
+        &:active,
+        &:focus:last-child {
+            color: $color-error;
+        }
     }
 
     &__input:placeholder-shown + &__label {
@@ -56,6 +62,7 @@
         background-color: unset;
         border: 2px solid;
         transition: all .3s;
+        margin-top: 1rem;
 
         &:hover,
         &:focus {
@@ -65,9 +72,17 @@
         }
 
         &--disabled {
-            color: grey;
-            border: 2px solid grey;
+            color: $color-secondary;
+            border: 2px solid $color-secondary;
             pointer-events: none;
+        }
+    }
+}
+
+@media (max-width: 45rem) {
+    .form {
+        &__input {
+            width: 90%;
         }
     }
 }

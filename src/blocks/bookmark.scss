@@ -1,3 +1,4 @@
+
 .bookmark {
     font-size: 1.3rem;
     display: flex;
@@ -11,7 +12,7 @@
     
     &__title {
         text-decoration: none;
-        color: rgb(64, 64, 64);
+        color: $color-primary;
         text-transform: uppercase;
         display: block;
         position: relative;

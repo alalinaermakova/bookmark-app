@@ -18,3 +18,14 @@
         
     }
 }
+
+@media (max-width: 45rem) {
+    .bookmark-form {
+        margin-top: 1.5rem;
+        width: 100%;
+
+        &__img {
+            display: none;
+        }
+    }
+}

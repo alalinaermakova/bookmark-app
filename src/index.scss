@@ -29,6 +29,24 @@ body {
     z-index: 1;
 }
 
+@media (min-width: 100em) {
+    html {
+        font-size: 70%;
+    }
+}
+
+@media (max-width: 37.5em) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media (max-width: 25em) {
+    html {
+        font-size: 48%;
+    }
+}
+
 
 @import './blocks/bookmark.scss';
 @import './blocks/bookmark-list.scss';
@@ -38,3 +56,4 @@ body {
 @import './blocks/popup.scss';
 @import './blocks/pagination.scss';
 @import './blocks/animation.scss';
+@import './blocks/variables.scss';

@@ -7,6 +7,7 @@ import {v4 as uuidv4} from 'uuid'; //to generate unique id for each bookmark
 import data from '../data/data.json';
 import ErrorPopup from './ErrorPopup';
 import useValidation from '../hooks/useValidation';
+import urlExist from '../utils/urlExist';
 
 
 const App = () => {
@@ -37,7 +38,7 @@ const App = () => {
     // to fill the bookmark form 
     const [bookmarkTitle, setBookmarkTitle] = useState('');
     const [bookmarkLink, setBookmarkLink] = useState ('');
-    const [showError, checkUrlExists] = useValidation(bookmarkLink);
+    const [showError] = useValidation(bookmarkLink);
     
 
     // use selectedBookmark to open edit popup and edit bookmark
@@ -67,8 +68,8 @@ const App = () => {
         // prevent the browser default behavior or refreshing the page on submit
         e.preventDefault();
         // putting new bookmarks on the top of the list
-        if (bookmarkTitle != '' && bookmarkLink != '') {
-            checkUrlExists()
+        if (bookmarkLink != '') {
+            urlExist(bookmarkLink)
                 .then(() => {
                         setBookmarks(prevBookmarks => [
                             {

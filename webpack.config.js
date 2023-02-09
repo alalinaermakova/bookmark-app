@@ -40,10 +40,6 @@ module.exports = {
         test: /\.(woff(2)?|eot|ttf|otf)$/,
         type: 'asset/resource'
       },
-      {
-        test: /\.(s(a|c)ss)$/,
-        use: [MiniCssExtractPlugin.loader,'css-loader', 'sass-loader']
-     },
      {
         test: /\.(png|jpg|gif|ico)$/,
         use: ['file-loader?name=[name].[ext]']
@@ -54,6 +50,22 @@ module.exports = {
         resourceQuery: { not: [/url/] }, // exclude react component if *.svg?url
         use: ['@svgr/webpack', 'url-loader'],
       },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          "style-loader",
+          // Translates CSS into CommonJS
+          "css-loader",
+          // Compiles Sass to CSS
+          {
+            loader: 'sass-loader',
+            options: {
+              additionalData: '@import "./src/blocks/variables";'
+            }
+          }
+        ],
+      }
       ]
   },
 
@@ -62,7 +74,6 @@ module.exports = {
       template: './public/index.html',
     }),
     new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin(),
     new HtmlWebpackInlineSVGPlugin({
         runPreEmit: true,
       }),

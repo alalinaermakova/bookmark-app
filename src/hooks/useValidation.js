@@ -1,19 +1,10 @@
-import urlExist from '../utils/utils';
 import { useState, useEffect } from 'react';
+import isUrlValid from '../utils/validation';
+
 
 // created custom hook to use link validation at the stage of adding bookmark and at the stage of editting
 const useValidation = (link) => {
     const [showError, setShowError] = useState(true);
-
-    const isUrlValid = () => {
-        let url;
-        try {
-            url = new URL(link);
-        } catch (error) {
-          return false;  
-        }
-        return url.protocol === "http:" || url.protocol === "https:";
-    }
 
     const handleCheckUrl = () => {
         setShowError(!isUrlValid(link))
@@ -21,11 +12,7 @@ const useValidation = (link) => {
 
     useEffect(() => { handleCheckUrl() }, [link]);
 
-    async function checkUrlExists() {
-        return urlExist(link);
-    }
-
-    return [showError, checkUrlExists];
+    return [showError];
 };
 
 export default useValidation;

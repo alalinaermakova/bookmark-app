@@ -38,6 +38,8 @@ Add, delete, edit bookmark, clear all bookmarks, grid or list view, 20 bookmarks
 * Animation
 * Dark/Light mode
 
+Open [Project](https://bookmark-app-ae.netlify.app/) to check it out.
+
 
 
 

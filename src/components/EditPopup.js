@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import useValidation from '../hooks/useValidation';
+import urlExist from '../utils/urlExist';
 
 const EditPopup = ({selectedBookmark, onUpdateBookmark, setIsErrorPopupOpened, onClose}) => {
 
     const [title, setTitle] = useState('');
     const [link, setLink] = useState('');
-    const [showError, checkUrlExists] = useValidation(link);
+    const [showError] = useValidation(link);
 
     function handleChangeTitle(e) {
         // set the new state value to what's currently in the input box
@@ -20,7 +21,7 @@ const EditPopup = ({selectedBookmark, onUpdateBookmark, setIsErrorPopupOpened, o
     function handleSubmit(e) {
         // prevent the browser default behavior or refreshing the page on submit
         e.preventDefault();
-        checkUrlExists()
+        urlExist(link)
         .then(() => {
             onUpdateBookmark({
                 id: selectedBookmark.id,
