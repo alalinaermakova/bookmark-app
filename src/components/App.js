@@ -31,7 +31,7 @@ const App = () => {
          * add the bookmarks as a dependancy because we want to update
          * localstorage anytime the bookmarks state changes
          **/
-        localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+        localStorage.removeItem("bookmarks", JSON.stringify(bookmarks));
     }, [bookmarks]);
     
     // to fill the bookmark form 

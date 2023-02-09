@@ -3,8 +3,6 @@ import halfMoon from '../images/half-moon.jpg';
 import React from 'react';
 
 const BookmarkForm = ({ addBookmark, bookmarkTitle, setBookmarkTitle, bookmarkLink, setBookmarkLink, showError }) => {
-    // const disabledButton = 'form__button--disabled';
-    // const enabledButton = 'form__button';
 
     return (
         <>
@@ -41,7 +39,12 @@ const BookmarkForm = ({ addBookmark, bookmarkTitle, setBookmarkTitle, bookmarkLi
                         <label htmlFor="form-link" className="form__label">
                             https://www.example.com
                         </label>
-                        <button className={`form__button ${showError ? 'form__button--disabled' : ''}`} onClick={addBookmark} disabled={showError}>add</button>
+                        <button
+                            className={`form__button ${showError ? 'form__button--disabled' : ''}`}
+                            onClick={addBookmark}
+                            disabled={showError}>
+                                add
+                        </button>
 
                 </form>
             </div> 

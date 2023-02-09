@@ -16,11 +16,7 @@ const useValidation = (link) => {
     }
 
     const handleCheckUrl = () => {
-        if (isUrlValid(link)) {
-            setShowError(false)
-        } else {
-            setShowError(true)
-        }
+        setShowError(!isUrlValid(link))
     }
 
     useEffect(() => { handleCheckUrl() }, [link]);

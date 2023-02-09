@@ -69,7 +69,11 @@ const EditPopup = ({selectedBookmark, onUpdateBookmark, setIsErrorPopupOpened, o
                             value={link}
                             onChange={handleChangeLink}>
                         </input>
-                        <button className={`popup__button ${showError ? 'popup__button--disabled' : ''}`}>Ok</button>
+                        <button
+                            className={`popup__button ${showError ? 'popup__button--disabled' : ''}`}
+                            disabled={showError}>
+                                ok
+                        </button>
                     </form>
                 </div>
             </div>
