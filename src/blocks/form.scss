@@ -79,10 +79,18 @@
     }
 }
 
-@media (max-width: 38rem) {
+@media (max-width: 75rem) {
     .form {
         &__input {
             width: 90%;
+        }
+    }
+}
+
+@media (max-width: 45rem) {
+    .form {
+        &__input {
+            width: 100%;
         }
     }
 }

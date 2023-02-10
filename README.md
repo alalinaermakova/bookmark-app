@@ -26,7 +26,7 @@ Open [http://localhost:8080](http://localhost:8080) to view it in your browser.
 
 ### Techologies:
 
-React, webpack, SASS, custom hooks, pagination library.
+React, webpack, SASS, custom hooks, pagination library, adaptive design.
 
 ### Functionality: 
 
@@ -34,11 +34,12 @@ Add, delete, edit bookmark, clear all bookmarks, grid or list view, 20 bookmarks
 
 ### Plans:
 
-* Adaptive design
 * Animation
 * Dark/Light mode
 
 Open [Project](https://bookmark-app-ae.netlify.app/) to check it out.
+
+[Figma visualisation and references](https://www.figma.com/file/76NWqsphSQ6YoSdR6jCriI/PlanetDesignBook-Customizable-Assets-(Community)?node-id=0%3A1&t=jQfhx4evGButqCw4-0). 
 
 
 

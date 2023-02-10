@@ -56,14 +56,34 @@
     }
 }
 
-@media (max-width: 38rem) {
+@media (max-width: 100rem) {
     .bookmark-list {
         &__rows {
-            width: 90%;
+            width: 40%;
+        }
+
+        &__grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+    }
+}
+
+@media (max-width: 80rem) {
+    .bookmark-list {
+        &__rows {
+            width: 50%;
         }
 
         &__grid {
             grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+}
+
+@media (max-width: 38rem) {
+    .bookmark-list {
+        &__rows {
+            width: 90%;
         }
 
         &__toggle-btn {

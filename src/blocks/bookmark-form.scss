@@ -19,10 +19,30 @@
     }
 }
 
-@media (max-width: 38rem) {
+@media (max-width: 80rem) {
     .bookmark-form {
-        margin-top: 1.5rem;
-        width: 100%;
+        width: 60%;
+        &__img {
+            right: -13rem;
+            width: 25rem;
+            top: 5rem;
+        }
+    }
+}
+
+@media (max-width: 70rem) {
+    .bookmark-form {
+        &__img {
+            right: -13rem;
+            width: 20rem;
+            top: 8rem;
+        }
+    }
+}
+
+@media (max-width: 40rem) {
+    .bookmark-form {
+        width: 90%;
 
         &__img {
             display: none;
