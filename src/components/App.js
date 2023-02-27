@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import ReactPaginate from "react-paginate";
 import BookmarkList from './BookmarkList';
 import BookmarkForm from './BookmarkForm';
@@ -39,7 +39,6 @@ const App = () => {
     const [bookmarkTitle, setBookmarkTitle] = useState('');
     const [bookmarkLink, setBookmarkLink] = useState ('');
     const [showError] = useValidation(bookmarkLink);
-    
 
     // use selectedBookmark to open edit popup and edit bookmark
     const [selectedBookmark, setSelectedBookmark] = useState(
@@ -116,16 +115,17 @@ const App = () => {
     }
 
     // invokes when we click on edit button
-    function handleBookmarkEditClicked(bookmark) {
+    const handleBookmarkEdition = useCallback((id) => {
+        const bookmark = bookmarks.find(b => b.id === id)
         setSelectedBookmark(
             {
-                isOpen: true,
+                isOpen: true,   
                 id: bookmark.id,
                 title: bookmark.title,
                 link: bookmark.link
             }
         );
-    }
+    }, [bookmarks, setSelectedBookmark])
 
     function closeErrorPopup() {
         setIsErrorPopupOpened(false);
@@ -154,7 +154,7 @@ const App = () => {
             <BookmarkList
                 bookmarks={currentPageBookmarks}
                 deleteBookmark={deleteBookmark}
-                onBookmarkEdit={handleBookmarkEditClicked}
+                onBookmarkEdit={handleBookmarkEdition}
                 clearAllBookmarks={clearAllBookmarks}/>
             <ReactPaginate
                 previousLabel={"<"}

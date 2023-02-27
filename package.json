@@ -16,7 +16,8 @@
   "scripts": {
     "build": "rm -rf dist && webpack --mode development",
     "dev": "webpack serve",
-    "predeploy": "npm run build"
+    "predeploy": "npm run build",
+    "test": "jest"
   },
   "eslintConfig": {
     "extends": [
@@ -35,6 +36,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",

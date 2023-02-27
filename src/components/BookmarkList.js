@@ -4,7 +4,7 @@ import toggleRows from '../images/rows.svg';
 import toggleGrid from '../images/grid.svg';
 
 const BookmarkList = ({ bookmarks, deleteBookmark, onBookmarkEdit, clearAllBookmarks }) => {
-
+    
     // presents our bookmarks either as a gridview or a listview
     const viewName = {grid: 'bookmark-list__grid', rows: 'bookmark-list__rows'};
     const grid = viewName.grid;
@@ -33,13 +33,15 @@ const BookmarkList = ({ bookmarks, deleteBookmark, onBookmarkEdit, clearAllBookm
                     {/* map over the bookmarks array which creates a new li element for every bookmark
                     (generating unique key for each bookmark with uuidv4) */}
                     {bookmarks.map(bookmark => {
+                        const linkImg = "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=" + bookmark.link + "&size=24";
                         return <Bookmark 
                             key={bookmark.id}
-                            bookmark={bookmark}
+                            id={bookmark.id}
                             title={bookmark.title}
                             link={bookmark.link}
-                            deleteBookmark={deleteBookmark}
-                            onBookmarkEdit={onBookmarkEdit}
+                            onDelete={deleteBookmark}
+                            onEdit={onBookmarkEdit}
+                            linkImg={linkImg}
                         />
                     })}
                 </div>
